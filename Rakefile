@@ -15,6 +15,22 @@ ENV['RACK_ENV'] = ENV['APP_ENV']
 # как мы уже инициализировали хранилище, когда включили init.rb
 namespace :db { task :setup {} }
 
+namespace :assets do
+  task :precompile do
+    puts exec('rm public/assets/* &&' \
+              ' touch public/assets/.keep' \
+              ' sprockets' \
+              ' --require uglifier sass ' \
+              ' --css-compressor=scss' \
+              ' --js-compressor=uglify' \
+              ' --include=assets/javascripts' \
+              ' --include=assets/stylesheets' \
+              ' --output=public/assets' \
+              ' assets/javascripts/app.js' \
+              ' assets/stylesheets/app.scss')
+  end
+end
+
 RSpec::Core::RakeTask.new(:test) do |t|
   t.pattern = Dir.glob('spec/**/*_spec.rb')
   # t.rspec_opts = '--format documentation'

@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'bundler'
 
-ENV['APP_ENV'] = 'development' unless ENV['APP_ENV']
+ENV['APP_ENV'] ||= 'development'
 
 # Включаем GEMы из Gemfile
 Bundler.require(:default, ENV['APP_ENV'].to_sym)
@@ -25,6 +25,9 @@ def require_files(dir)
 
   files.each { |file| require file }
 end
+
+# Включаем библиотеки
+require_files(File.dirname(__FILE__) + '/lib')
 
 # Включаем модели сущностей и базу данных
 require_files(File.dirname(__FILE__) + '/db')

@@ -17,6 +17,7 @@ gem 'sinatra', '~> 2.0.0', require: 'sinatra/base'
 gem 'sinatra-contrib', '~> 2.0.0'
 
 gem 'sprockets', '~> 3.7.1'
+gem 'sprockets-helpers', '~> 1.2.1'
 gem 'sprockets-vue', '~> 0.1.0'
 
 gem 'therubyracer', '~> 0.12.3'
@@ -27,7 +28,7 @@ group :test do
   gem 'rack-test', '~> 0.6.3', require: 'rack/test'
 
   # GEM для проверки соответсвия кода style guide
-  gem 'rubocop'
+  gem 'rubocop', require: false
 
   gem 'rspec', '~> 3.6.0'
 end

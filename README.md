@@ -19,4 +19,7 @@ rake db:migrate
 
 # удаление всех таблиц и выполнение миграций (плохой подход)
 rake db:reset
+
+# прекомпиляция статики
+rake assets:precompile
 ```

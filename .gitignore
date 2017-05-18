@@ -1,0 +1,4 @@
+/public/assets/*
+!/public/assets/.keep
+
+.DS_Store
