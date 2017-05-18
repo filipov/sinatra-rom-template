@@ -3,7 +3,7 @@ module Datasum
   module API
     def self.included(app)
       app.get '/api' do
-        json api: a
+        json api: 5
       end
     end
   end

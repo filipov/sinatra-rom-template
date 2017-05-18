@@ -11,11 +11,17 @@ gem 'rake', '~> 12.0.0'
 gem 'rom', '~> 3.2.2'
 gem 'rom-sql', '~> 1.3.2'
 
+gem 'sass', '~> 3.4.23'
+
 gem 'sinatra', '~> 2.0.0', require: 'sinatra/base'
 gem 'sinatra-contrib', '~> 2.0.0'
 
 gem 'sprockets', '~> 3.7.1'
 gem 'sprockets-vue', '~> 0.1.0'
+
+gem 'therubyracer', '~> 0.12.3'
+
+gem 'uglifier', '~> 3.2.0'
 
 group :test do
   gem 'rack-test', '~> 0.6.3', require: 'rack/test'
