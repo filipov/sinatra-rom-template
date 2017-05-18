@@ -1,5 +1,13 @@
 ## Класс приложения
 class App < Sinatra::Base
+  set :environment, Sprockets::Environment.new
+
+  environment.append_path "assets/stylesheets"
+  environment.append_path "assets/javascripts"
+
+  environment.js_compressor  = :uglify
+  environment.css_compressor = :scss
+
   include Datasum::API
 
   def self.route(method, path, opts, &block)

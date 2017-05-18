@@ -1,12 +1,14 @@
 require 'rubygems'
 require 'bundler'
 
+ENV['APP_ENV'] = 'development' unless ENV['APP_ENV']
+
 # Включаем GEMы из Gemfile
-Bundler.require(:default, (ENV['APP_ENV'] || 'development').to_sym)
+Bundler.require(:default, ENV['APP_ENV'].to_sym)
 
 # Загружаем переменные среды для нашего окруения
 # по умолчанию окружение: development
-Dotenv.load! ".env.#{ENV['APP_ENV'] || 'development'}"
+Dotenv.load! ".env.#{ENV['APP_ENV']}"
 
 # Функция описывает рекурсивное включение .rb файлов из директории
 def require_files(dir)
