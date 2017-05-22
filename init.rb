@@ -11,10 +11,11 @@ Bundler.require(:default, ENV['APP_ENV'].to_sym)
 Dotenv.load! ".env.#{ENV['APP_ENV']}"
 
 # Включаем библиотеки
-require_all(File.dirname(__FILE__) + '/lib')
+require_all(File.dirname(__FILE__) + '/db/relations')
+require_all(File.dirname(__FILE__) + '/db/repositories')
 
 # Включаем модели сущностей и базу данных
-require_all(File.dirname(__FILE__) + '/db')
+require File.dirname(__FILE__) + '/db/setup'
 
 # Включаем WEB-приложение
 require_all(File.dirname(__FILE__) + '/app')

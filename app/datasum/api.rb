@@ -3,7 +3,7 @@ module Datasum
   module API
     def self.included(app)
       app.get '/api' do
-        json api: 5
+        json api: AppRepo.new(STORAGE).apps.map { |e| e }
       end
     end
   end

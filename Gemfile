@@ -9,6 +9,7 @@ gem 'pg', '~> 0.20.0'
 gem 'rake', '~> 12.0.0'
 
 gem 'rom', '~> 3.2.2'
+gem 'rom-repository', '~> 1.3', '>= 1.3.2'
 gem 'rom-sql', '~> 1.3.2'
 
 gem 'require_all', '~> 1.4.0'
