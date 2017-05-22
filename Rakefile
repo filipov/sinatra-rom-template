@@ -13,21 +13,9 @@ ENV['RACK_ENV'] = ENV['APP_ENV']
 
 # задача для конфигурирования хранилища для ROM, в данном случае-заглушка, так
 # как мы уже инициализировали хранилище, когда включили init.rb
-namespace :db { task :setup {} }
-
-namespace :assets do
-  task :precompile do
-    puts exec('rm public/assets/* &&' \
-              ' touch public/assets/.keep' \
-              ' sprockets' \
-              ' --require uglifier sass ' \
-              ' --css-compressor=scss' \
-              ' --js-compressor=uglify' \
-              ' --include=assets/javascripts' \
-              ' --include=assets/stylesheets' \
-              ' --output=public/assets' \
-              ' assets/javascripts/app.js' \
-              ' assets/stylesheets/app.scss')
+namespace :db do
+  task :setup do
+    STORAGE
   end
 end
 

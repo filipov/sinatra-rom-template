@@ -11,6 +11,8 @@ gem 'rake', '~> 12.0.0'
 gem 'rom', '~> 3.2.2'
 gem 'rom-sql', '~> 1.3.2'
 
+gem 'require_all', '~> 1.4.0'
+
 gem 'sinatra', '~> 2.0.0', require: 'sinatra/base'
 gem 'sinatra-contrib', '~> 2.0.0'
 
